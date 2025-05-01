@@ -44,6 +44,31 @@ rails server
 
 The application will be available at `http://localhost:3000`
 
+## Testing with cURL
+
+Here are some examples of how to test the API using cURL in your terminal:
+
+### GET Request (List all artists)
+```bash
+curl -X GET http://localhost:3000/api/v1/artists
+```
+
+### POST Request (Create a new artist)
+```bash
+curl -X POST http://localhost:3000/api/v1/artists \
+  -H "Content-Type: application/json" \
+  -d '{"artist": {"name": "The Rolling Stones"}}'
+```
+
+### PATCH Request (Update an artist)
+```bash
+curl -X PATCH http://localhost:3000/api/v1/artists/1 \
+  -H "Content-Type: application/json" \
+  -d '{"artist": {"name": "The Beatles"}}'
+```
+
+Note: Replace `1` in the PATCH request with an actual artist ID from your database.
+
 ## API Documentation
 
 ### Artists
